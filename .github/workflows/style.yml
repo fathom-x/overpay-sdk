@@ -1,0 +1,38 @@
+name: Style
+
+# ASCII punctuation only: a spaced hyphen instead of an em-dash, three periods
+# instead of an ellipsis character.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: style-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  punctuation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # The patterns are built with printf so this file does not match its own
+      # check, and matched as bytes (`git grep -F`) so the gate holds in any
+      # locale.
+      - name: No em-dashes (U+2014)
+        run: |
+          if git grep -nF -e "$(printf '\xe2\x80\x94')"; then
+            echo "::error::Em-dash (U+2014) found above. Use a spaced hyphen ' - ', a comma, or parentheses."
+            exit 1
+          fi
+      - name: No ellipsis character (U+2026)
+        run: |
+          if git grep -nF -e "$(printf '\xe2\x80\xa6')"; then
+            echo "::error::Ellipsis character (U+2026) found above. Use three periods '...'."
+            exit 1
+          fi

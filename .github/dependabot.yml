@@ -1,0 +1,18 @@
+# Security updates only: version-update PRs are disabled with a zero limit.
+version: 2
+updates:
+  - package-ecosystem: cargo
+    directory: /rust
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+  - package-ecosystem: bundler
+    directory: /ruby
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
