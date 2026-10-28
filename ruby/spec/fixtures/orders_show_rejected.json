@@ -1,0 +1,56 @@
+{
+  "data": {
+    "id": "70701f67-5458-4713-9ad9-86c6888e5f1c",
+    "payment_status": "paid",
+    "fulfillment_status": "rejected",
+    "product_title": "Metered inference",
+    "free": false,
+    "product_price_cents": 100,
+    "product_price_usd": "$1.00",
+    "total_usd_cents": 100,
+    "total_usd": "$1.00",
+    "settled_amount_cents": 0,
+    "refunded_cents": 100,
+    "refund_status": "refunded",
+    "fulfillment_error": null,
+    "authorized_cents": 100,
+    "captured_cents": 0,
+    "released_cents": 100,
+    "rejection": {
+      "message": "This turn needs a larger authorization",
+      "reason_code": "authorization_too_low",
+      "estimated_cost_cents": 120,
+      "required_authorization_cents": 150
+    },
+    "spend_authorization_id": null,
+    "seller_revenue_cents": 100,
+    "platform_fee_cents": 0,
+    "platform_fee_usd": "$0.00",
+    "buyer_note": null,
+    "variant_key": null,
+    "client_session_id": null,
+    "quantity": 1,
+    "quote": null,
+    "checkout": {
+      "required": false,
+      "complete": true,
+      "data": null
+    },
+    "order_url": "http://www.example.com/orders/70701f67-5458-4713-9ad9-86c6888e5f1c",
+    "delivered_content_type": null,
+    "tracking_number": null,
+    "carrier": null,
+    "tracking_url": null,
+    "created_at": "2026-10-21T19:04:11.316Z",
+    "paid_at": "2026-10-21T19:04:11.380Z",
+    "delivered_at": null,
+    "expected_delivered_at": null,
+    "delivery_skew_seconds": null,
+    "settlement_tx_hash": null,
+    "delivered_content": null,
+    "listing": {
+      "id": "040d9900-5773-4dff-afb5-47e5fae11e3a",
+      "title": "Metered inference"
+    }
+  }
+}

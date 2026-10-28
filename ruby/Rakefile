@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+require "rake/testtask"
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList["test/**/*_test.rb"]
+  t.warning = false
+end
+
+desc "Regenerate lib/overpay/generated.rb from spec/overpay-v1.json"
+task :codegen do
+  ruby "bin/codegen"
+end
+
+task default: :test

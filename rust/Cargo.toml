@@ -1,0 +1,27 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/overpay-nip98",
+    "crates/overpay-sdk",
+    "crates/overpay-sdk-codegen",
+]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.88"
+license = "MIT"
+repository = "https://github.com/fathom-x/overpay-sdk"
+authors = ["fathom-x"]
+homepage = "https://overpay.com"
+
+[workspace.dependencies]
+overpay-nip98 = { path = "crates/overpay-nip98", version = "0.0.1" }
+
+sha2 = "0.10"
+rand = "0.8"
+zeroize = { version = "1", features = ["zeroize_derive"] }
+hex = "0.4"
+thiserror = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

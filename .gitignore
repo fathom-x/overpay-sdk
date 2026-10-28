@@ -1,0 +1,5 @@
+/rust/target/
+/ruby/.bundle/
+/ruby/vendor/
+*.gem
+.DS_Store
